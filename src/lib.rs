@@ -20,10 +20,12 @@ pub use self::{compression::Compression, row::Row};
 use self::{error::Result, http_client::HttpClient};
 
 pub mod error;
+pub mod http_client;
 pub mod insert;
 #[cfg(feature = "inserter")]
 pub mod inserter;
 pub mod query;
+pub mod request_body;
 pub mod serde;
 pub mod sql;
 #[cfg(feature = "test-util")]
@@ -34,8 +36,6 @@ pub mod watch;
 mod buflist;
 mod compression;
 mod cursor;
-mod http_client;
-mod request_body;
 mod response;
 mod row;
 mod rowbinary;
